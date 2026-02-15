@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "kingdomsmod",
+	"version": "${version}",
+	"name": "KingdomsMod",
+	"description": "This is a mod for a friend :D",
+	"authors": [
+		"Squeebs!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/kingdomsmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.squeebs.kingdoms.KingdomsMod"
+		],
+        "client": [
+        "net.squeebs.kingdoms.KingdomsModClient"
+      ],
+		"fabric-datagen": [
+			"net.squeebs.kingdoms.KingdomsModDataGenerator"
+		]
+	},
+	"mixins": [
+		"kingdomsmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}

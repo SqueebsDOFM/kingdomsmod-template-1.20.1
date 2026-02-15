@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "kingdomsmod:item/diamond_knife_blade"
+  }
+}
