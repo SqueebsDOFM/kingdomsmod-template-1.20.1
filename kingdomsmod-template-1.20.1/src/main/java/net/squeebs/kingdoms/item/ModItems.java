@@ -27,6 +27,13 @@ public class ModItems {
     public static final Item DIAMOND_KNIFE_BLADE = registerItem("diamond_knife_blade",new Item(new FabricItemSettings()));
     public static final Item DIAMOND_SWORD_BLADE = registerItem("diamond_sword_blade",new Item(new FabricItemSettings()));
     public static final Item FLINT_ARROW_HEAD = registerItem("flint_arrow_head",new Item(new FabricItemSettings()));
+    public static final Item HIGH_QUALITY_CANVAS = registerItem("high_quality_canvas",new Item(new FabricItemSettings()));
+    public static final Item RESIN_CANDY = registerItem("resin_candy",new Item(new FabricItemSettings().food(ModFoodComponents.RESIN_CANDY)));
+    public static final Item CARAMELIZED_ONIONS = registerItem("caramelized_onions",new Item(new FabricItemSettings().food(ModFoodComponents.CARAMELIZED_ONIONS)));
+    public static final Item CARAMELIZED_ONION_CHOWDER = registerItem("caramelized_onion_chowder",new Item(new FabricItemSettings().food(ModFoodComponents.CARAMELIZED_ONION_CHOWDER)));
+
+
+
 
 
     private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries){
@@ -43,6 +50,12 @@ public class ModItems {
         entries.add(DIAMOND_KNIFE_BLADE);
         entries.add(DIAMOND_SWORD_BLADE);
         entries.add(FLINT_ARROW_HEAD);
+        entries.add(HIGH_QUALITY_CANVAS);
+    }
+    private static void addItemsToFoodTabItemGroup(FabricItemGroupEntries entries){
+        entries.add(RESIN_CANDY);
+        entries.add(CARAMELIZED_ONIONS);
+        entries.add(CARAMELIZED_ONION_CHOWDER);
     }
 
     private static Item registerItem(String name, Item item){
@@ -54,5 +67,6 @@ public class ModItems {
         KingdomsMod.LOGGER.info("Registering Mod Items for" + KingdomsMod.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientTabItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::addItemsToFoodTabItemGroup);
     }
 }
